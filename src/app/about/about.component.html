@@ -1,0 +1,86 @@
+<div class="about-container">
+    <!-- About Section with Carousel -->
+    <section class="about-us">
+      <h1>About Us</h1>
+      <p>Welcome to Tent Kotta! We are a passionate team dedicated to providing movie buffs with a wide selection of new and classic movie CDs. Whether you're looking for the latest blockbuster or an old classic, we've got something for every movie enthusiast!</p>
+      <p>At Tent Kotta, we pride ourselves on offering high-quality products with exceptional customer service, making it easy for you to find and enjoy your favorite films.</p>
+
+ 
+  
+    </section>
+  
+    <!-- Contact Form -->
+    <section class="contact-form">
+      <h2>Contact Us</h2>
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" ngModel name="name" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" ngModel name="email" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="form-control" ngModel name="message" required></textarea>
+        </div>
+  
+        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Send Message</button>
+      </form>
+  
+      <!-- Contact Info (Email and Phone) -->
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:contact@tentkotta.com">contact@tentkotta.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+      </div>
+    </section>
+  
+    <!-- FAQs Section with Accordion -->
+    <section class="queries">
+      <h2>Have Queries?</h2>
+      <p>If you have any questions or queries, feel free to ask us below. Our support team will get back to you shortly.</p>
+  
+      <!-- Accordion for FAQs -->
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              What types of movies do you offer?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We offer a wide selection of new and old CDs for movies, including the latest releases and timeless classics across various genres.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              How can I place an order?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can place an order directly on our website through the shopping cart, or contact our sales team for any assistance.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Do you offer discounts on bulk purchases?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we offer special discounts for bulk purchases. Please contact us for more information on bulk pricing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

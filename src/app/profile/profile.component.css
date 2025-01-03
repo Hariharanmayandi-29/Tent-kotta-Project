@@ -1,0 +1,134 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif; /* A more neutral font for a professional look */
+    background: linear-gradient(to right, #2e3b4e, #3a4a63); /* Muted, professional gradient */
+    color: #333; /* Dark grey text for readability */
+  }
+  
+  /* Container Styles */
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    background: rgba(255, 255, 255, 0.1); /* Slight opacity for a clean, subtle background */
+    backdrop-filter: blur(12px);
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Softer shadow for a subtle depth */
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  /* Welcome Message */
+  .welcome-message {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4caf50; /* Green color for a fresh and inviting look */
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Tagline */
+  .tagline {
+    font-size: 1.2rem;
+    color: #90a4ae; /* Soft greyish blue for a neutral tagline */
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  
+  /* User Details */
+  .user-details {
+    margin-top: 2rem;
+    text-align: left;
+  }
+  
+  .detail {
+    margin-bottom: 1rem;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    color: #2196f3; /* Blue for labels, making it stand out */
+    font-size: 1.1rem;
+  }
+  
+  .detail-value {
+    margin-left: 10px;
+    color: #1c1b1b; /* Lighter grey text for readability */
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  /* Input Section */
+  .user-input {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .user-input p {
+    font-size: 1rem;
+    color: #8bc34a; /* Light green for input instructions */
+    margin-bottom: 10px;
+  }
+  
+  .user-input input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #8bc34a; /* Green border for inputs */
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333; /* Dark text for readability */
+    margin-bottom: 10px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+  }
+  
+  .user-input button {
+    padding: 10px 15px;
+    background-color: #4caf50; /* Green button for consistency */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-input button:hover {
+    background-color: #388e3c; /* Slightly darker green on hover */
+  }
+  
+  /* CD Animation */
+  .cd-animation {
+    margin-top: 2rem;
+    animation: slideUp 1.8s ease-in-out;
+  }
+  
+  .cd-animation p {
+    font-size: 1rem;
+    color: #cfd8dc; /* Lighter grey text for the quote */
+  }
+  .btn-logout {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-logout:hover {
+    background-color: #c0392b;
+  }
+  
+  

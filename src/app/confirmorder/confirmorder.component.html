@@ -1,0 +1,214 @@
+<div>
+   <div *ngIf="orderplaced===false">
+    <div *ngIf="movies_from_purchase  ">
+        <div class="container w-100">
+            <ng-content></ng-content>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="card w-100 p-1 mt-2">
+                        <div class="card-header">
+                            <h2>Confirm Order</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="w-100 ">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <h2 class="bold">{{movies_from_purchase.movie_name}}</h2>
+                                </div>
+                                <div class="card-img d-flex justify-content-center"><img class="img-thumbnail w-25"
+                                        [src]="movies_from_purchase.image" alt=""></div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Total Roll cost:</span>
+                                                <span>{{ movies_from_purchase.total_price |currency:'INR'}}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Quantity:</span>
+                                                <span>{{ movies_from_purchase.total_movie }}</span>
+                                            </div>
+                                            <!-- <div class="d-flex justify-content-between">
+                                                <span>Roll Price:</span>
+                                                <span>{{ roll_price }}</span>
+                                            </div> -->
+                                            <div class="d-flex justify-content-between">
+                                                <span>Tax:</span>
+                                                <span>{{ movies_from_purchase.tax|currency:'INR' }}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Charges:</span>
+                                                <span>{{ movies_from_purchase.charges |currency:'INR'}}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Discount:</span>
+                                                <span>{{ movies_from_purchase.discount |currency:'INR'}}</span>
+                                            </div>
+                                            <hr>
+                                            <div class="d-flex justify-content-between fw-bold">
+                                                <span>Total Amount:</span>
+                                                <span>{{ movies_from_purchase.total_amnt |currency:'INR' }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card w-100 mt-1">
+                            <div class="card-header">Place your order</div>
+                            <div class="card-body">
+                                <form #orderform="ngForm" (ngSubmit)="address_form(orderform)">
+                                    <div class="row">
+                                        <!-- Name -->
+                                        <div class="col-md-6 col-12">
+                                            <div>
+                                                <label for="name" class="form-label">Name</label>
+                                                <input class="form-control" type="text" name="name" ngModel
+                                                    #name="ngModel" required>
+                                            </div>
+                                            <div class="text-danger"
+                                                *ngIf="name?.valid==false && (name?.touched || name?.dirty)">
+
+                                                <span *ngIf="name?.errors?.['required']">
+                                                    <p>The field is required</p>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mobile No -->
+                                        <div class="col-md-6 col-12">
+                                            <div>
+                                                <label for="mobile" class="form-label">Mobile No</label>
+                                                <input class="form-control" type="tel" name="mobile" ngModel
+                                                    #mobile="ngModel" required>
+                                            </div>
+                                            <div class="text-danger"
+                                                *ngIf="mobile?.valid==false && (mobile?.touched || mobile?.dirty)">
+                                                <span *ngIf="mobile?.errors?.['required']">
+                                                    <p>This field is required</p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div>
+                                                <label for="country" class="form-label">Country</label>
+                                                <input class="form-control" type="text" name="country" ngModel
+                                                    #country="ngModel" required>
+                                            </div>
+                                            <div class="text-danger"
+                                                *ngIf="country?.valid==false && (country?.touched || country?.dirty)">
+                                                <span *ngIf="country?.errors?.['required']">
+                                                    <p>This field is required</p>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Address -->
+                                        <div class="col-12 mt-2">
+                                            <label for="address" class="form-label">Address</label>
+                                            <div class="row" ngModelGroup="address" #address="ngModelGroup">
+                                                <!-- Line 1 -->
+                                                <div class="col-md-6 col-12 mt-2">
+                                                    <div>
+                                                        <label for="line1" class="form-label">Line 1</label>
+                                                        <input class="form-control" type="text" name="line1" ngModel
+                                                            #line1="ngModel" required>
+                                                    </div>
+                                                    <div class="text-danger"
+                                                        *ngIf="line1?.valid==false && (line1?.touched ||line1?.dirty)">
+                                                        <span *ngIf="line1?.errors?.['required']">
+                                                            <p>Thi
+                                                                s field is required</p>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Line 2 -->
+                                                <div class="col-md-6 col-12 mt-2">
+                                                    <div>
+                                                        <label for="line2" class="form-label">Line 2</label>
+                                                        <input class="form-control" type="text" name="line2" ngModel
+                                                            #line2="ngModel">
+                                                    </div>
+                                                </div>
+
+                                                <!-- City -->
+                                                <div class="col-md-6 col-12 mt-2">
+                                                    <div>
+                                                        <label for="city" class="form-label">City</label>
+                                                        <input class="form-control" type="text" name="city" ngModel
+                                                            #city="ngModel" required>
+                                                    </div>
+                                                    <div class="text-danger"
+                                                        *ngIf="city?.invalid && (city?.touched || city?.dirty)">
+                                                        <span *ngIf="city?.errors?.['required']">
+                                                            <p>This field is rquired</p>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Zip Code -->
+                                                <div class="col-md-6 col-12 mt-2">
+                                                    <div>
+                                                        <label for="zipcode" class="form-label">Zip Code</label>
+                                                        <input class="form-control" type="number" name="zipcode" ngModel
+                                                            #zipcode="ngModel" required>
+                                                    </div>
+                                                    <div class="text-danger"
+                                                        *ngIf="zipcode?.invalid && (zipcode?.touched || zipcode?.dirty)">
+                                                        <span *ngIf="zipcode?.errors?.['required']">
+                                                            <p>The fied is required</p>
+                                                        </span>
+
+                                                    </div>
+                                                </div>
+                                                <!-- accept -->
+                                                <div class="col-md-6 col-12 mt-2">
+                                                    <div class="d-flex gap-1 align-items-center">
+                                                        <input type="checkbox" name="accept" ngModel #accept="ngModel"
+                                                            required>
+                                                        <label for="accept">I have given all information to my
+                                                            knowledge</label>
+
+                                                    </div>
+                                                    <div class="text-danger"
+                                                        *ngIf="accept?.invalid && (accept?.touched || accept?.dirty)">
+                                                        <span *ngIf="accept?.errors?.['checked']">
+                                                            <p>click to confirm</p>
+                                                        </span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <div class="col-6 mt-3 button-container">
+                                            <button type="submit" class="btn btn-primary place-order-btn"
+                                                [disabled]="orderform?.invalid">
+                                                Place Order
+                                            </button>
+                                        </div>
+                                        <div class="col-6 mt-3 button-container">
+                                            <button type="reset" class="btn btn-primary reset-btn"
+                                                (click)="address_form(orderform)">
+                                                Reset
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+    <div *ngIf="orderplaced==true">
+        <app-successfull-order [movies_from_purchase]="movies_from_purchase"></app-successfull-order>
+    </div>
+</div>

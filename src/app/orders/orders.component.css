@@ -1,0 +1,104 @@
+/* No Orders Styling */
+.no-orders-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto; /* Center alignment */
+    text-align: center;
+  }
+  
+  .no-orders-container h2 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .no-orders-container p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 20px;
+  }
+  
+  .no-orders-container button {
+    background-color: #ff4500;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .no-orders-container button:hover {
+    background-color: #cc3700;
+  }
+  
+  .icon-placeholder {
+    font-size: 60px;
+    color: #ff4500;
+    margin-bottom: 20px;
+  }
+  
+  /* Fix for General Body */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Card Styling */
+  .card {
+    background: rgba(255, 255, 255, 0.15); /* Slightly reduced opacity for subtle effect */
+    border: none;
+    backdrop-filter: blur(2px); /* Reduced blur for a sharper look */
+    color: black;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .card-footer {
+    background: rgba(0, 0, 0, 0.2); /* Slight contrast for footer */
+    color: black;
+  }
+  
+  /* Buttons */
+  .btn {
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Dark text on hover for readability */
+  }
+  
+  .btn-light {
+    background-color: white;
+    color: #4bc0c8;
+    border: none;
+  }
+  
+  .btn-light:hover {
+    background-color: #feac5e;
+    color: #fff;
+  }
+  

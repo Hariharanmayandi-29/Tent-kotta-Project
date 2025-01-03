@@ -1,0 +1,33 @@
+<div *ngIf="user_data.localId">
+    <div class="profile-container">
+        <div class="profile-card">
+            <h1 class="welcome-message">🎬 Welcome, Valued Movie Enthusiast</h1>
+            <p class="tagline">"Explore a diverse collection of timeless classics and contemporary films at Tent Kotta."</p>
+
+            <!-- User Details -->
+            <div class="user-details">
+                <div class="detail">
+                    <span class="detail-label">Full Name:</span>
+                    <span class="detail-value" [innerText]="user_data.displayName"></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-label">Email Address:</span>
+                    <span class="detail-value" [innerText]="user_data.email"></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-label">User ID:</span>
+                    <span class="detail-value" [innerText]="user_data.localId"></span>
+                </div>
+            </div>
+
+            <button (click)="logout()" class="btn-logout">Logout</button>
+
+            
+
+            <!-- Inspirational Quote -->
+            <div class="quote-section">
+                <p class="quote">🌟 "Each film is a new adventure. Let your cinematic journey begin!"</p>
+            </div>
+        </div>
+    </div>
+</div>

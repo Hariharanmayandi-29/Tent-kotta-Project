@@ -1,0 +1,32 @@
+/* Primary Button Styling */
+.btn-primary {
+    background-color: #6c63ff; /* Calming lavender blue */
+    border: none; /* Remove border */
+    color: white; /* White text color */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .btn-primary:hover {
+    background-color: #574dcf; /* Slightly darker lavender blue for hover */
+  }
+  
+  /* Specific styling for the "Place Order" button */
+  .place-order-btn {
+    background-color: #43aa8b; /* Soft teal for Place Order */
+    color: white; /* Ensure good text contrast */
+  }
+  
+  .place-order-btn:hover {
+    background-color: #2d8064; /* Darker teal for hover */
+  }
+  
+  /* Specific styling for the "Reset" button */
+  .reset-btn {
+    background-color: #ffcc66; /* Soft pastel orange for Reset */
+    color: black; /* High contrast for readability */
+  }
+  
+  .reset-btn:hover {
+    background-color: #d6a947; /* Deeper pastel orange for hover */
+  }
+  

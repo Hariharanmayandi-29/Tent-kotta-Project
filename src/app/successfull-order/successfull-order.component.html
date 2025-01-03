@@ -1,0 +1,16 @@
+<div>
+    <div class="card w-100 mt-3" >
+        <div class="card-header bg-success text-white text-center">
+            <h3>Your Order is Successful!</h3>
+        </div>
+        <div class="card-body text-center">
+            <p>
+                Total Roll: <strong>{{ movies_from_purchase.total_movie }}</strong>
+            </p>
+            <p>
+                Total Cost: <strong>{{ movies_from_purchase.total_amnt | currency: 'INR' }}</strong>
+            </p>
+            <p>If you want to check further details, visit your <a routerLink="/order">Orders Cart</a>.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                <!-- Header -->
+                <div class="card-header text-center bg-primary text-white">
+                    <h4>Invoice</h4>
+                    <p>Order ID: {{ invoice_data.orderid }}</p>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+                    <!-- Customer Details -->
+                    <h5>Customer Details</h5>
+                    <p><strong>Name:</strong> {{ invoice_data.name }}</p>
+                    <p><strong>Mobile:</strong> {{ invoice_data.mobile }}</p>
+                    <p><strong>Address:</strong></p>
+                    <p>
+                        {{ invoice_data.address.line1 }}, {{ invoice_data.address.line2 }}<br>
+                        {{ invoice_data.address.city }}, {{ invoice_data.address.zipcode }}
+                    </p>
+                    <hr>
+
+                    <!-- Order Details -->
+                    <!-- Optional Image -->
+                    <div *ngIf="invoice_data.image">
+                        <h5>Movie Image</h5>
+                        <img [src]="invoice_data.image" alt="Movie Image" class="img-fluid">
+                    </div>
+                    <h5>Order Details</h5>
+                    <p><strong>Movie Name:</strong> {{ invoice_data.movie_name }}</p>
+                    <p><strong>Total Roll :</strong> {{ invoice_data.total_movie }}</p>
+                    <p><strong>Charges:</strong> {{ invoice_data.charges | currency:'INR'}}</p>
+                    <p><strong>Tax:</strong> {{ invoice_data.tax | currency:'INR'}}</p>
+                    <p><strong>Discount:</strong> {{ invoice_data.discount | currency:'INR'}}</p>
+                    <p><strong>Total Price:</strong> {{ invoice_data.total_price | currency:'INR'}}</p>
+                    <p><strong>Grand Total:</strong> {{ invoice_data.total_amnt | currency:'INR'}}</p>
+                    <hr>
+
+                    <!-- Delivery Details -->
+                    <h5>Delivery Details</h5>
+                    <p><strong>Country:</strong> {{ invoice_data.country }}</p>
+                    <p><strong>Order Date:</strong> {{ invoice_data.date }}</p>
+                    <p><strong>Expected Delivery Date:</strong> {{ invoice_data.deliver_date }}</p>
+                    <hr>
+
+
+
+
+                </div>
+
+                <!-- Footer -->
+                <div class="card-footer text-center">
+                    <button class="btn btn-success mx-1">Print Invoice</button>
+                    <button class="btn btn-secondary " (click)="close_invoice()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

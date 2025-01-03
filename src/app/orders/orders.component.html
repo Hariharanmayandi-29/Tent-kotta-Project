@@ -1,0 +1,75 @@
+<!-- no orders -->
+<div *ngIf="order_data.length==0">
+    <div class="no-orders-container">
+        <!-- Icon or Placeholder -->
+        <div class="icon-placeholder">
+          🎥
+        </div>
+        <h2>No Orders Yet</h2>
+        <p>Looks like your cart is empty! Explore our collection of movies and CDs to make your first purchase.</p>
+        <button routerLink="/home">Browse Movies</button>
+      </div>
+      
+</div>
+
+
+<div *ngIf="order_data.length>0">
+    <div style=" min-height: 100vh; padding: 20px;">
+        <div class="container " *ngIf="invoicetoggle===false">
+            <!-- Order Cards -->
+            <div class="row d-flex justify-content-center" *ngFor="let order of order_data; let i = index">
+                <div class="col-12 col-md-9 col-lg-8">
+                    <div class="card w-100 shadow-sm "
+                        style=" background: linear-gradient(45deg, #feac5e, #c779d0, #4bc0c8);">
+                        <div class="card-body">
+                            <!-- Card Header -->
+                            <h5 class="card-title text-center text-white mb-3">
+                                Dear Customer, {{ order.name }}!
+                            </h5>
+
+                            <!-- Main Content -->
+                            <div class="d-flex justify-content-between">
+                                <!-- Image Section -->
+                                <div class="card w-25">
+                                    <div class="card-img">
+                                        <img [src]="order.image" class="img-thumbnail" alt="Movie Image">
+                                    </div>
+                                </div>
+
+                                <!-- Order Details Section -->
+                                <div class="w-75 ps-3 text-white">
+                                    <p><strong>Order ID:</strong> {{ order.orderid }}</p>
+                                    <p><strong>Movie Name:</strong> {{ order.movie_name }}</p>
+                                    <p><strong>Total Price:</strong> ₹{{ order.total_price }}</p>
+                                    <p><strong>Quantity:</strong> {{ order.total_movie }}</p>
+                                    <p><strong>Ordered Date:</strong> {{ order.date | date: 'dd-MM-yyyy' }}</p>
+                                    <p><strong>Delivery Date:</strong> {{ order.deliver_date | date: 'dd-MM-yyyy' }}</p>
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-light shadow" (click)="indexing_invoice_data(i)"
+                                    (click)="invoice_toggle()">
+                                    View Invoice
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer -->
+                        <div class="card-footer text-center">
+                            <p class="text-white mb-0">Thank you for shopping with us!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Invoice View -->
+        <div *ngIf="invoicetoggle==true">
+            <div>
+                <app-invoice [invoice_data]="invoice_data" (close_btn)="close_invoice($event)"></app-invoice>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,188 @@
+.page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full viewport height */
+    width: 100vw;
+    /* Full viewport width */
+    position: fixed;
+    /* Ensure it stays in place */
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    /* Optional background for contrast */
+    z-index: 1000;
+    /* Ensure it's above other content */
+}
+
+.dot-loader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    /* Space between dots */
+}
+
+.dot-loader div {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: linear-gradient(45deg, #f09433, #bc2a8d, #8a3ab9, #feda75);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.dot-loader div:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot-loader div:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.dot-loader div:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* movie detail bg theme */
+.bg-theme {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    background-size: 300% 300%;
+    animation: gradientBG 6s ease infinite;
+
+    padding: 1rem;
+}
+
+.gradient-text {
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    font-family: 'Arial', sans-serif; 
+    color: #fdfdfd; /* Light color to contrast with the background */
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8); /* Subtle shadow for readability */
+  }
+  
+  /* Animate Background Gradient */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .detail-text {
+    font-size: 1.2rem;
+    color: #f0f8ff; /* Alice Blue for a subtle contrast */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle but effective shadow */
+    margin: 0.5rem 0;
+  }
+  
+  .card_movie {
+    background: linear-gradient(45deg, #feac5e, #c779d0, #4bc0c8);
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+  
+  .booking-details {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1.5rem;
+  }
+  
+  .detail-label,
+  .detail-value {
+    font-size: 1.2rem;
+    color: #faf0e6; /* Linen for a soft contrast with warmth */
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); /* Enhances readability */
+    margin: 0;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    text-align: left;
+    flex: 1;
+  }
+  
+  .detail-value {
+    text-align: right;
+    flex: 1;
+  }
+  /* purchase btn */
+  .purchase-btn{
+    background: linear-gradient(to right, #feda75, #fc490f, #f56040); /* Instagram gradient color */
+    color: white; /* Text color */
+     /* Optional: makes text bold */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 12px 0; /* Adds padding to the button */
+    text-transform: uppercase; /* Optional: makes text uppercase */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+  }
+  .purchase-btn:hover{
+    background: linear-gradient(to right, #f56040, #fc490f, #feda75); /* Inverted gradient on hover */
+    cursor: pointer;
+  }
+  .purchase-btn:disabled {
+    background: #d3d3d3; /* Light gray for disabled state */
+    color: #2f2d2d; /* Gray text for disabled state */
+    cursor: not-allowed; /* Shows a not-allowed cursor */
+    border: 1px solid #ccc; /* Optional: subtle border for better visibility */
+    opacity: 0.7; /* Slight transparency for a disabled effect */
+}
+
+.back-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Space between the circle and text */
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000; /* Default text color */
+  transition: color 0.3s ease;
+}
+
+.icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* Circle size */
+  height: 35px;
+  border-radius: 50%; /* Makes it a circle */
+  background: linear-gradient(45deg, #feac5e, #c779d0, #4bc0c8); /* Gradient for circle */
+  color: white; /* Icon color */
+  font-size: 20px; /* Icon size */
+  transition: background 0.3s ease;
+}
+
+.back-icon:hover .icon-circle {
+  background: linear-gradient(45deg, #4bc0c8, #c779d0, #feac5e); /* Change gradient on hover */
+}
+
+.back-icon:hover {
+  color: #0056b3; /* Change text color on hover */
+}
+
+
+
+
+  
+  
+
+
